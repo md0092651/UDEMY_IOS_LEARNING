@@ -16,6 +16,8 @@ struct QuizBrain {
     // Behaviour o=to reset the quiz
     
      var currentQuestionNumber = 0
+     var score = 0
+     var isLastQuestion = false
     
      let questionList = [
           Quiz(q: "A slug's blood is green.", a: "True"),
@@ -33,19 +35,24 @@ struct QuizBrain {
     ]
     
     mutating func checkAnswer(answerSubmitted : String)->Bool{
+        incrementCurrentQuestion()
         if(answerSubmitted == questionList[currentQuestionNumber].a){
-            incrementCurrentQuestion()
+            addPoints()
             return true
         }else{
             return false
         }
     }
     
+    mutating func addPoints(){
+            score += 1
+    }
+    
     mutating func incrementCurrentQuestion()  {
         if(currentQuestionNumber+1 < questionList.count){
             currentQuestionNumber += 1
         }else{
-            resetQuiz()
+            isLastQuestion = true
         }
     }
     
@@ -53,8 +60,18 @@ struct QuizBrain {
         return questionList[currentQuestionNumber]
     }
     
+    func getScore() -> Int  {
+        return score
+    }
+    
+    func isLast() -> Bool {
+        return isLastQuestion
+    }
+    
     mutating func resetQuiz(){
         currentQuestionNumber = 0
+        score = 0
+        isLastQuestion = false
     }
 }
 

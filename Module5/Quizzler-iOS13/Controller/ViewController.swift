@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var btnTrue: UIButton!
     @IBOutlet weak var btnFalse: UIButton!
+    @IBOutlet weak var pointsLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
@@ -28,15 +29,34 @@ class ViewController: UIViewController {
            sender.backgroundColor = UIColor.red
         }
         
-        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
-
+        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(checkIfGameOverAndUpdateUI), userInfo: nil, repeats: false)
+    }
+    
+    @objc func checkIfGameOverAndUpdateUI(){
+        if(quizBrain.isLast()){
+             clearButtonBackground()
+            self.performSegue(withIdentifier: "goToResult", sender: nil)
+        }else{
+            updateUI()
+        }
     }
     
     @objc func updateUI(){
-        btnTrue.backgroundColor = UIColor.clear
-        btnFalse.backgroundColor = UIColor.clear
+        clearButtonBackground()
         quizTitle.text = quizBrain.getCurrentQuiz().q
+        pointsLabel.text = "\(quizBrain.getScore()) Points"
     }
     
+    func clearButtonBackground(){
+        btnTrue.backgroundColor = UIColor.clear
+        btnFalse.backgroundColor = UIColor.clear
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goToResult"){
+            let nextScreen  = segue.destination as! ResultViewController
+            nextScreen.score = "\(quizBrain.getScore())"
+        }
+    }
 }
 
