@@ -23,117 +23,135 @@
                                 <rect key="frame" x="20" y="54" width="374" height="808"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMI Calculator" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTk-VF-dn6">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="53.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" distribution="fillEqually" alignment="top" spacing="10" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mE7-2J-hlK">
-                                        <rect key="frame" x="0.0" y="60" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="63.5" width="374" height="53.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsr-eb-abo">
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsr-eb-abo">
                                                 <rect key="frame" x="0.0" y="0.0" width="118" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <state key="normal" title="Home">
-                                                    <color key="titleColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loanTypeSelector:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y1T-KO-tkx"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCB-k9-4Dp">
                                                 <rect key="frame" x="128" y="0.0" width="118" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <state key="normal" title="Car">
-                                                    <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loanTypeSelector:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nNg-HU-1VE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iad-9k-Aa5">
                                                 <rect key="frame" x="256" y="0.0" width="118" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                 <state key="normal" title="Personal">
-                                                    <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="loanTypeSelector:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pL0-Kz-rdo"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poverty" translatesAutoresizingMaskIntoConstraints="NO" id="tRo-UF-sFc">
-                                        <rect key="frame" x="0.0" y="120" width="374" height="294.5"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001-construction" translatesAutoresizingMaskIntoConstraints="NO" id="tRo-UF-sFc">
+                                        <rect key="frame" x="0.0" y="127" width="374" height="326"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qLq-Hw-WEF">
-                                        <rect key="frame" x="0.0" y="424.5" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="463" width="374" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Amount" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW6-IA-Ofl">
-                                                <rect key="frame" x="0.0" y="0.0" width="177" height="43.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msf-dh-Yqp">
-                                                <rect key="frame" x="197" y="0.0" width="177" height="43.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rs 100000" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msf-dh-Yqp">
+                                                <rect key="frame" x="197" y="0.0" width="177" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="43.5" id="8gE-nn-ivp"/>
+                                            <constraint firstAttribute="height" constant="30" id="8gE-nn-ivp"/>
                                         </constraints>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xpw-eH-zi4">
-                                        <rect key="frame" x="-2" y="478" width="378" height="46"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1000000" minValue="0.0" maxValue="10000000" translatesAutoresizingMaskIntoConstraints="NO" id="Xpw-eH-zi4">
+                                        <rect key="frame" x="-2" y="503" width="378" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Nay-Uq-Fti"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="LoanAmountChangeListner:" destination="BYZ-38-t0r" eventType="valueChanged" id="7eF-ji-oh4"/>
+                                        </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RdU-PT-tRA">
-                                        <rect key="frame" x="0.0" y="533" width="374" height="42.5"/>
+                                        <rect key="frame" x="0.0" y="558" width="374" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgN-yi-aas">
-                                                <rect key="frame" x="0.0" y="0.0" width="177" height="42.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate of interest" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgN-yi-aas">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-SX-Wzh">
-                                                <rect key="frame" x="197" y="0.0" width="177" height="42.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-SX-Wzh">
+                                                <rect key="frame" x="197" y="0.0" width="177" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="42.5" id="S0z-Jz-nka"/>
+                                            <constraint firstAttribute="height" constant="30" id="S0z-Jz-nka"/>
                                         </constraints>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="YKy-iK-ahL">
-                                        <rect key="frame" x="-2" y="585.5" width="378" height="46"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7.5" minValue="5" maxValue="18" translatesAutoresizingMaskIntoConstraints="NO" id="YKy-iK-ahL">
+                                        <rect key="frame" x="-2" y="598" width="378" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Y5h-Qo-b0i"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="rateOfIntrestChangeListner:" destination="BYZ-38-t0r" eventType="valueChanged" id="rB4-iL-Van"/>
+                                        </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8Lu-xi-m20">
-                                        <rect key="frame" x="0.0" y="640.5" width="374" height="42.5"/>
+                                        <rect key="frame" x="0.0" y="653" width="374" height="30"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9h-vG-ApP">
-                                                <rect key="frame" x="0.0" y="0.0" width="177" height="42.5"/>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loan Tenure" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9h-vG-ApP">
+                                                <rect key="frame" x="0.0" y="0.0" width="177" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOR-96-AjP">
-                                                <rect key="frame" x="197" y="0.0" width="177" height="42.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 Months" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOR-96-AjP">
+                                                <rect key="frame" x="197" y="0.0" width="177" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="42.5" id="3Y0-4w-4Q7"/>
+                                            <constraint firstAttribute="height" constant="30" id="3Y0-4w-4Q7"/>
                                         </constraints>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="drg-RZ-3M4">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="300" translatesAutoresizingMaskIntoConstraints="NO" id="drg-RZ-3M4">
                                         <rect key="frame" x="-2" y="693" width="378" height="46"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="sIp-Mg-koY"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="loanTenureChangeListner:" destination="BYZ-38-t0r" eventType="valueChanged" id="t9B-1r-QHv"/>
+                                        </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gY-FI-Bdc">
                                         <rect key="frame" x="0.0" y="748" width="374" height="60"/>
@@ -144,6 +162,9 @@
                                         <state key="normal" title="Calculate">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="calculate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wJD-NT-YsA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -157,6 +178,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="btnCar" destination="OCB-k9-4Dp" id="cn0-zE-bX7"/>
+                        <outlet property="btnHome" destination="jsr-eb-abo" id="gEh-qU-jQj"/>
+                        <outlet property="btnPersonal" destination="iad-9k-Aa5" id="5zc-pA-uOi"/>
+                        <outlet property="interestRateLabel" destination="WTA-SX-Wzh" id="ITB-27-Di3"/>
+                        <outlet property="loanAmountLabel" destination="Msf-dh-Yqp" id="0Z1-Wu-tcG"/>
+                        <outlet property="loanTypeImage" destination="tRo-UF-sFc" id="qWY-ou-ql6"/>
+                        <outlet property="monthsLabel" destination="uOR-96-AjP" id="NVI-Yb-nr1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -216,7 +246,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="001-construction" width="170.5" height="170.5"/>
         <image name="1" width="503" height="422"/>
-        <image name="poverty" width="170.5" height="170.5"/>
     </resources>
 </document>

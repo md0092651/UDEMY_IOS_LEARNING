@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48BA45132463E58D0053A7FF /* Loan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48BA45122463E58D0053A7FF /* Loan.swift */; };
 		48D716DA2462061B00A4B032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D716D92462061B00A4B032 /* AppDelegate.swift */; };
 		48D716DC2462061B00A4B032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D716DB2462061B00A4B032 /* SceneDelegate.swift */; };
 		48D716DE2462061B00A4B032 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D716DD2462061B00A4B032 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48BA45122463E58D0053A7FF /* Loan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loan.swift; sourceTree = "<group>"; };
 		48D716D62462061B00A4B032 /* Module6-Emi Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Module6-Emi Calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48D716D92462061B00A4B032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48D716DB2462061B00A4B032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		48D716ED2462065A00A4B032 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				48BA45122463E58D0053A7FF /* Loan.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				48D716DE2462061B00A4B032 /* ViewController.swift in Sources */,
 				48D716DA2462061B00A4B032 /* AppDelegate.swift in Sources */,
 				48D716DC2462061B00A4B032 /* SceneDelegate.swift in Sources */,
+				48BA45132463E58D0053A7FF /* Loan.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
