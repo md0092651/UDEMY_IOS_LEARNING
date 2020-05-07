@@ -75,7 +75,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rs 100000" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msf-dh-Yqp">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rs 10000" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msf-dh-Yqp">
                                                 <rect key="frame" x="197" y="0.0" width="177" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -91,6 +91,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Nay-Uq-Fti"/>
                                         </constraints>
+                                        <color key="thumbTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="LoanAmountChangeListner:" destination="BYZ-38-t0r" eventType="valueChanged" id="7eF-ji-oh4"/>
                                         </connections>
@@ -104,7 +105,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-SX-Wzh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTA-SX-Wzh">
                                                 <rect key="frame" x="197" y="0.0" width="177" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -120,6 +121,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Y5h-Qo-b0i"/>
                                         </constraints>
+                                        <color key="thumbTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="rateOfIntrestChangeListner:" destination="BYZ-38-t0r" eventType="valueChanged" id="rB4-iL-Van"/>
                                         </connections>
@@ -133,7 +135,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 Months" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOR-96-AjP">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Months" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOR-96-AjP">
                                                 <rect key="frame" x="197" y="0.0" width="177" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -149,6 +151,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="sIp-Mg-koY"/>
                                         </constraints>
+                                        <color key="thumbTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="loanTenureChangeListner:" destination="BYZ-38-t0r" eventType="valueChanged" id="t9B-1r-QHv"/>
                                         </connections>
@@ -186,22 +189,23 @@
                         <outlet property="loanAmountLabel" destination="Msf-dh-Yqp" id="0Z1-Wu-tcG"/>
                         <outlet property="loanTypeImage" destination="tRo-UF-sFc" id="qWY-ou-ql6"/>
                         <outlet property="monthsLabel" destination="uOR-96-AjP" id="NVI-Yb-nr1"/>
+                        <segue destination="1p4-KD-5IG" kind="presentation" identifier="goToResult" id="xRG-35-PN7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Resule Emi View Controller-->
         <scene sceneID="sgf-z1-fWn">
             <objects>
-                <viewController id="1p4-KD-5IG" sceneMemberID="viewController">
+                <viewController id="1p4-KD-5IG" customClass="ResuleEmiViewController" customModule="Module6_Emi_Calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xRR-OO-Ed0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSI-rg-XIU">
-                                <rect key="frame" x="10" y="812" width="394" height="60"/>
+                                <rect key="frame" x="10" y="758" width="394" height="60"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="egS-dh-gMg"/>
@@ -209,9 +213,12 @@
                                 <state key="normal" title="Recalculate">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetClick:" destination="1p4-KD-5IG" eventType="touchUpInside" id="NsF-xg-V0M"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="apT-qN-uP8">
-                                <rect key="frame" x="147.5" y="405" width="119" height="86.5"/>
+                                <rect key="frame" x="147.5" y="378" width="119" height="86.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your EMI is " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fLY-rL-pkF">
                                         <rect key="frame" x="0.0" y="0.0" width="119" height="29"/>
@@ -239,6 +246,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zYw-HS-Ft1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="AKC-Mm-eKh"/>
+                    <connections>
+                        <outlet property="emiAmountLabel" destination="4sH-qP-kvX" id="U1Y-gD-Ppc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLo-Wk-1fL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
