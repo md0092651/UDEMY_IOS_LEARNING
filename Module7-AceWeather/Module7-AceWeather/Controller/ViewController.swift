@@ -16,11 +16,14 @@ class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("Hello")
         tableView?.dataSource = viewModel
-               tableView?.estimatedRowHeight = 100
+        tableView?.delegate = viewModel
+        tableView?.estimatedRowHeight = 500
         tableView?.rowHeight = UITableView.automaticDimension
         tableView?.register(HeaderCell.nib, forCellReuseIdentifier: HeaderCell.identifier)
         tableView?.register(DetailCell.nib, forCellReuseIdentifier: DetailCell.identifier)
+        tableView?.register(DetailsCollectionTableViewCell.nib, forCellReuseIdentifier: DetailsCollectionTableViewCell.identifier)
     }
     
     

@@ -1,5 +1,5 @@
 //
-//  DetailCell.swift
+//  DetailCollectionViewCell.swift
 //  Module7-AceWeather
 //
 //  Created by Monika Singh on 09/05/20.
@@ -8,12 +8,11 @@
 
 import UIKit
 
-class DetailCell: UITableViewCell {
-    
+class DetailCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var title : UILabel!
     @IBOutlet weak var value : UILabel!
-    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var icon : UIImageView!
     
     var item: MoreInfoModel? {
         didSet {
@@ -28,11 +27,6 @@ class DetailCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
     
     static var nib:UINib {
@@ -43,3 +37,4 @@ class DetailCell: UITableViewCell {
         return String(describing: self)
     }
 }
+

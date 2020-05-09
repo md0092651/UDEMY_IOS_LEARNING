@@ -21,7 +21,6 @@ class HeaderCell: UITableViewCell {
             guard let item = item as? HeaderViewModelItem else {
                 return
             }
-            
             currrentCityNameLabel?.text = item.currrentCityName
             ccurrentWeatherConditionLabel?.text = item.currentWeatherCondition
             currentTemperatureLabel?.text = item.currentTemperature
@@ -32,19 +31,15 @@ class HeaderCell: UITableViewCell {
     }
     
     override func awakeFromNib() {
-        super.awakeFromNib()
-        
+        super.awakeFromNib()        
     }
-    
+
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
         imageGif?.prepareForReuse()
     }
     

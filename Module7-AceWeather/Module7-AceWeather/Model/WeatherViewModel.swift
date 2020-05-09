@@ -17,23 +17,24 @@ class WeatherViewModel : NSObject {
         
         // START HEADER SECTION
         let header = HeaderViewModelItem(summary: data.currently.summary, currrentCityName: data.timezone, currentTemperature: "\(data.currently.apparentTemperature)", daysLowTemperature: "\(data.daily.data[0].apparentTemperatureLow)", daysHighTemperature: "\(data.daily.data[0].apparentTemperatureHigh)")
+        
         items.append(header)
         // END HEADER SECTION
         
         //TODO :: Change this section of data to collection view with 2 column in 1 row
-         // START DETAIL SECTION
+        // START DETAIL SECTION
         var i = [MoreInfoModel]()
-        i.append(MoreInfoModel(title: "Cloud", subTitle: "\(data.currently.cloudCover * 100)", image: #imageLiteral(resourceName: "icons8-thermometer-100")))// TODO ::  change  suitable icon
+        i.append(MoreInfoModel(title: "Cloud", subTitle: "\(data.currently.cloudCover * 100)", image: #imageLiteral(resourceName: "icons8-partly-cloudy-day-100")))
         i.append(MoreInfoModel(title: "UV Index", subTitle: "\(data.currently.uvIndex)", image: #imageLiteral(resourceName: "icons8-global-warming-100")))
         i.append(MoreInfoModel(title: "Wind Speed", subTitle: "\(data.currently.windSpeed)", image: #imageLiteral(resourceName: "icons8-wind-100")))
-        i.append(MoreInfoModel(title: "Wind Direction", subTitle: "NW", image: #imageLiteral(resourceName: "icons8-wind-speed-1-2-100")))// TODO ::  change to dynamic value
+        i.append(MoreInfoModel(title: "Wind Direction", subTitle: "NW", image: #imageLiteral(resourceName: "icons8-windsock-100")))// TODO ::  change to dynamic value
         i.append(MoreInfoModel(title: "Sunrise", subTitle: "6:00 AM", image: #imageLiteral(resourceName: "icons8-sunrise-100"))) // TODO ::  change to dynamic value
         i.append(MoreInfoModel(title: "Sunset", subTitle: "7:00 PM", image: #imageLiteral(resourceName: "icons8-sunset-100")))// TODO ::  change to dynamic value
         i.append(MoreInfoModel(title: "Humidity", subTitle: "\(data.currently.humidity * 100)", image: #imageLiteral(resourceName: "icons8-moisture-100")))
         i.append(MoreInfoModel(title: "Rain Chance", subTitle: String(format: "%.1f", data.currently.precipProbability), image: #imageLiteral(resourceName: "icons8-rainy-weather-100")))
         let detail = DetailsModelItem(details: i)
         items.append(detail)
-         // END HEADER SECTION
+        // END HEADER SECTION
     }
     
     public func dataFromFile(_ filename: String) -> Data? {
@@ -59,7 +60,7 @@ class WeatherViewModel : NSObject {
 }
 
 
-extension WeatherViewModel: UITableViewDataSource {
+extension WeatherViewModel: UITableViewDataSource , UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
         return items.count
     }
@@ -74,9 +75,10 @@ extension WeatherViewModel: UITableViewDataSource {
                 cell.item = item
                 return cell
             }
+            
         case .details:
-            if let item = item as? DetailsModelItem, let cell = tableView.dequeueReusableCell(withIdentifier: DetailCell.identifier, for: indexPath) as? DetailCell {
-                let detail = item.details[indexPath.row]
+            if let item = item as? DetailsModelItem, let cell = tableView.dequeueReusableCell(withIdentifier: DetailsCollectionTableViewCell.identifier, for: indexPath) as? DetailsCollectionTableViewCell {
+                let detail = item.details
                 cell.item = detail
                 return cell
             }
@@ -87,4 +89,5 @@ extension WeatherViewModel: UITableViewDataSource {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return items[section].sectionTitle
     }
+
 }

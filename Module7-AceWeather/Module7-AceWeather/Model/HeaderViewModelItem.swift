@@ -43,7 +43,7 @@ class DetailsModelItem : DashBoardViewModelItem{
     }
     
     var rowCount: Int {
-        return details.count
+        return 1
     }
     var details : [MoreInfoModel]
     

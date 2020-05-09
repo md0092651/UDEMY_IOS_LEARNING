@@ -1,1 +1,5 @@
 https://icons8.com/icon/pack/weather/color
+
+https://medium.com/@stasost/ios-how-to-build-a-table-view-with-multiple-cell-types-2df91a206429
+
+
