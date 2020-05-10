@@ -1,16 +1,22 @@
 PODS:
+  - Charts (3.5.0):
+    - Charts/Core (= 3.5.0)
+  - Charts/Core (3.5.0)
   - Gifu (3.2.0)
 
 DEPENDENCIES:
+  - Charts
   - Gifu
 
 SPEC REPOS:
   trunk:
+    - Charts
     - Gifu
 
 SPEC CHECKSUMS:
+  Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
   Gifu: 7bcb6427457d85e0b4dff5a84ec5947ac19a93ea
 
-PODFILE CHECKSUM: 9b5cfee71fd0c66caade0e8d1051cd7f56b4932a
+PODFILE CHECKSUM: aa1078af6ce7f772b6e5c0c6506626ebed3613c8
 
 COCOAPODS: 1.9.1

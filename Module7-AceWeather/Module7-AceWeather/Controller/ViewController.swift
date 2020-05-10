@@ -24,6 +24,7 @@ class ViewController: UIViewController{
         tableView?.register(HeaderCell.nib, forCellReuseIdentifier: HeaderCell.identifier)
         tableView?.register(DetailCell.nib, forCellReuseIdentifier: DetailCell.identifier)
         tableView?.register(DetailsCollectionTableViewCell.nib, forCellReuseIdentifier: DetailsCollectionTableViewCell.identifier)
+        tableView?.register(HourlyForecastChartViewCell.nib, forCellReuseIdentifier: HourlyForecastChartViewCell.identifier)
     }
     
     

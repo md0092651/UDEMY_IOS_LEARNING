@@ -23,7 +23,7 @@ struct Forecast: Decodable {
 
 // MARK: - Currently
 struct Currently: Decodable {
-    let time: Int
+    let time: Double
     let summary: String
     let icon: Icon
     let nearestStormDistance, nearestStormBearing: Int?
@@ -102,15 +102,15 @@ struct Daily: Decodable {
 struct DailyDatum: Decodable {
     let time: Int
     let summary, icon: String
-    let sunriseTime, sunsetTime: Int
+    let sunriseTime, sunsetTime: Double
     let moonPhase, precipIntensity, precipIntensityMax: Double
     let precipIntensityMaxTime: Int
     let precipProbability: Double
     let precipType: PrecipType
     let temperatureHigh: Double
-    let temperatureHighTime: Int
+    let temperatureHighTime: Double
     let temperatureLow: Double
-    let temperatureLowTime: Int
+    let temperatureLowTime: Double
     let apparentTemperatureHigh: Double
     let apparentTemperatureHighTime: Int
     let apparentTemperatureLow: Double
@@ -128,6 +128,17 @@ struct DailyDatum: Decodable {
     let apparentTemperatureMinTime: Int
     let apparentTemperatureMax: Double
     let apparentTemperatureMaxTime: Int
+    
+}
+
+extension DailyDatum{
+    func getSunRiseString() -> String {
+        return DateUtility.formatUnixDate(withFormat: DateFormat.HH_mm, unixTimeStamp: sunriseTime)
+    }
+    
+    func getSunsetString() -> String {
+        return DateUtility.formatUnixDate(withFormat: DateFormat.HH_mm, unixTimeStamp: sunsetTime)
+    }
 }
 
 // MARK: - Flags

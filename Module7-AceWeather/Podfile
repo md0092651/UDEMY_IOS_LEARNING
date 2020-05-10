@@ -5,6 +5,7 @@ target 'Module7-AceWeather' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'Gifu'
+  pod 'Charts'
   # Pods for Module7-AceWeather
 
 end

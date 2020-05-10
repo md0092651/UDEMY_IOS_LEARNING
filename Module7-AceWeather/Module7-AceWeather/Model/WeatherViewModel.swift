@@ -21,20 +21,27 @@ class WeatherViewModel : NSObject {
         items.append(header)
         // END HEADER SECTION
         
-        //TODO :: Change this section of data to collection view with 2 column in 1 row
+      
         // START DETAIL SECTION
         var i = [MoreInfoModel]()
         i.append(MoreInfoModel(title: "Cloud", subTitle: "\(data.currently.cloudCover * 100)", image: #imageLiteral(resourceName: "icons8-partly-cloudy-day-100")))
         i.append(MoreInfoModel(title: "UV Index", subTitle: "\(data.currently.uvIndex)", image: #imageLiteral(resourceName: "icons8-global-warming-100")))
         i.append(MoreInfoModel(title: "Wind Speed", subTitle: "\(data.currently.windSpeed)", image: #imageLiteral(resourceName: "icons8-wind-100")))
         i.append(MoreInfoModel(title: "Wind Direction", subTitle: "NW", image: #imageLiteral(resourceName: "icons8-windsock-100")))// TODO ::  change to dynamic value
-        i.append(MoreInfoModel(title: "Sunrise", subTitle: "6:00 AM", image: #imageLiteral(resourceName: "icons8-sunrise-100"))) // TODO ::  change to dynamic value
-        i.append(MoreInfoModel(title: "Sunset", subTitle: "7:00 PM", image: #imageLiteral(resourceName: "icons8-sunset-100")))// TODO ::  change to dynamic value
+        i.append(MoreInfoModel(title: "Sunrise", subTitle: data.daily.data[0].getSunRiseString(), image: #imageLiteral(resourceName: "icons8-sunrise-100")))
+        i.append(MoreInfoModel(title: "Sunset", subTitle: data.daily.data[0].getSunsetString(), image: #imageLiteral(resourceName: "icons8-sunset-100")))
         i.append(MoreInfoModel(title: "Humidity", subTitle: "\(data.currently.humidity * 100)", image: #imageLiteral(resourceName: "icons8-moisture-100")))
         i.append(MoreInfoModel(title: "Rain Chance", subTitle: String(format: "%.1f", data.currently.precipProbability), image: #imageLiteral(resourceName: "icons8-rainy-weather-100")))
         let detail = DetailsModelItem(details: i)
         items.append(detail)
-        // END HEADER SECTION
+        // END DETAIL SECTION
+        
+        //START HOURLY FORECAST
+        let hourly = HourlyForecast(details: data.hourly.data)
+        items.append(hourly)
+        
+        //END HOURLY SECTION
+        
     }
     
     public func dataFromFile(_ filename: String) -> Data? {
@@ -64,9 +71,11 @@ extension WeatherViewModel: UITableViewDataSource , UITableViewDelegate{
     func numberOfSections(in tableView: UITableView) -> Int {
         return items.count
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items[section].rowCount
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = items[indexPath.section]
         switch item.type {
@@ -82,6 +91,11 @@ extension WeatherViewModel: UITableViewDataSource , UITableViewDelegate{
                 cell.item = detail
                 return cell
             }
+        case .hourlyForecaset:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: HourlyForecastChartViewCell.identifier, for: indexPath) as? HourlyForecastChartViewCell {
+                           cell.item = item
+                           return cell
+                       }
         }
         return UITableViewCell()
     }

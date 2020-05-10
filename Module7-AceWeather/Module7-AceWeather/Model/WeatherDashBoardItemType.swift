@@ -11,7 +11,7 @@ import Foundation
 enum WeatherDashBoardItemType{
     case header
     case details
-//    case hourlyForecaseTemperature
+    case hourlyForecaset
 //    case hourlyForecaseWind
 //    case sunRise
 //    case forecastWeekly

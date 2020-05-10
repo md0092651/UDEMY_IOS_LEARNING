@@ -33,7 +33,7 @@ class HeaderViewModelItem: DashBoardViewModelItem {
 
 
 class DetailsModelItem : DashBoardViewModelItem{
-    
+
     var type: WeatherDashBoardItemType{
         return .details
     }
@@ -50,6 +50,25 @@ class DetailsModelItem : DashBoardViewModelItem{
     init(details : [MoreInfoModel]) {
         self.details = details
     }
+}
+
+class HourlyForecast: DashBoardViewModelItem {
     
+    var type: WeatherDashBoardItemType{
+        return .hourlyForecaset
+    }
     
+    var sectionTitle: String{
+        return "Hourly Forecast"
+    }
+    
+    var rowCount: Int {
+        return 1
+    }
+    
+    var details : [Currently]
+    
+    init(details : [Currently]) {
+        self.details = details
+    }
 }
