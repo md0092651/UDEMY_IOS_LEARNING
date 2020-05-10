@@ -122,19 +122,12 @@
 		48BFAD7224643D5E000ABE19 /* Module7-AceWeather */ = {
 			isa = PBXGroup;
 			children = (
-				48F361D4246881940093687B /* Extensions */,
-				48F361CA2468099B0093687B /* Utility */,
-				48D228402466A47C00249F64 /* Screenshot */,
-				48BFAD9524647846000ABE19 /* gif */,
+				48F361DF24688C900093687B /* Extras */,
+				48F361DE24688C650093687B /* Resources */,
 				48BFAD932464782A000ABE19 /* Controller */,
 				48BFAD9224647824000ABE19 /* View */,
 				48BFAD912464781D000ABE19 /* Model */,
-				48BFAD7324643D5E000ABE19 /* AppDelegate.swift */,
-				48BFAD7524643D5F000ABE19 /* SceneDelegate.swift */,
-				48BFAD7C24643D60000ABE19 /* Assets.xcassets */,
 				48BFAD8124643D60000ABE19 /* Info.plist */,
-				48BFAD8D2464710D000ABE19 /* Resources.txt */,
-				482EE90F2465C3FC00F729F0 /* response.json */,
 			);
 			path = "Module7-AceWeather";
 			sourceTree = "<group>";
@@ -142,6 +135,8 @@
 		48BFAD912464781D000ABE19 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				48F361D4246881940093687B /* Extensions */,
+				48F361CA2468099B0093687B /* Utility */,
 				48BFAD8F24647755000ABE19 /* MoreInfoModel.swift */,
 				482EE9052465A31C00F729F0 /* WeatherDashBoardItemType.swift */,
 				482EE9072465A4A000F729F0 /* DashBoardViewModelItem.swift */,
@@ -157,16 +152,10 @@
 			children = (
 				48BFAD7E24643D60000ABE19 /* LaunchScreen.storyboard */,
 				48BFAD7924643D5F000ABE19 /* Main.storyboard */,
-				48A6CE312465F08A00B6BAA7 /* HeaderCell.swift */,
 				48A6CE322465F08A00B6BAA7 /* HeaderCell.xib */,
-				48A6CE352465FA5A00B6BAA7 /* DetailCell.swift */,
 				48A6CE362465FA5A00B6BAA7 /* DetailCell.xib */,
-				48D228432466A5EF00249F64 /* DetailsCollectionTableViewCell.swift */,
 				48D228442466A5EF00249F64 /* DetailsCollectionTableViewCell.xib */,
-				48D228472466C2CB00249F64 /* DetailCollectionViewCell.swift */,
 				48D228482466C2CB00249F64 /* DetailCollectionViewCell.xib */,
-				48D2284B2466E41A00249F64 /* DynamicHeightCollectionView.swift */,
-				48F361CE24684C8D0093687B /* HourlyForecastChartViewCell.swift */,
 				48F361CF24684C8D0093687B /* HourlyForecastChartViewCell.xib */,
 			);
 			path = View;
@@ -175,6 +164,12 @@
 		48BFAD932464782A000ABE19 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				48A6CE312465F08A00B6BAA7 /* HeaderCell.swift */,
+				48A6CE352465FA5A00B6BAA7 /* DetailCell.swift */,
+				48D228432466A5EF00249F64 /* DetailsCollectionTableViewCell.swift */,
+				48D228472466C2CB00249F64 /* DetailCollectionViewCell.swift */,
+				48D2284B2466E41A00249F64 /* DynamicHeightCollectionView.swift */,
+				48F361CE24684C8D0093687B /* HourlyForecastChartViewCell.swift */,
 				48BFAD7724643D5F000ABE19 /* ViewController.swift */,
 			);
 			path = Controller;
@@ -212,6 +207,27 @@
 				48F361D5246881B50093687B /* ButtonExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		48F361DE24688C650093687B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				482EE90F2465C3FC00F729F0 /* response.json */,
+				48BFAD7524643D5F000ABE19 /* SceneDelegate.swift */,
+				48BFAD7324643D5E000ABE19 /* AppDelegate.swift */,
+				48BFAD9524647846000ABE19 /* gif */,
+				48BFAD7C24643D60000ABE19 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		48F361DF24688C900093687B /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				48D228402466A47C00249F64 /* Screenshot */,
+				48BFAD8D2464710D000ABE19 /* Resources.txt */,
+			);
+			path = Extras;
 			sourceTree = "<group>";
 		};
 		CF22F996B60DF0028D2DFD02 /* Frameworks */ = {
