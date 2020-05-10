@@ -24,9 +24,7 @@ class HeaderCell: UITableViewCell {
             currrentCityNameLabel?.text = item.currrentCityName
             ccurrentWeatherConditionLabel?.text = item.currentWeatherCondition
             currentTemperatureLabel?.text = item.currentTemperature
-            imageGif.animate(withGIFNamed: "01d") {
-              print("It's animating!")
-            }
+            imageGif.animate(withGIFNamed: "01d")
         }
     }
     

@@ -137,8 +137,6 @@ extension HourlyForecastChartViewCell : ChartViewDelegate{
 class ChartsFormatterDateShort: IAxisValueFormatter {
     var labels: [String] = []
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
-        print(value)
-        
         return labels[Int(value)]
     }
     

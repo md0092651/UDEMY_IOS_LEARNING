@@ -8,15 +8,23 @@
 
 import UIKit
 import Gifu
+import CoreLocation
 
 class ViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
     fileprivate let viewModel = WeatherViewModel()
     
+    var locationManager : CLLocationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hello")
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestLocation()
+        
+        
         tableView?.dataSource = viewModel
         tableView?.delegate = viewModel
         tableView?.estimatedRowHeight = 500
@@ -30,4 +38,15 @@ class ViewController: UIViewController{
     
     
     
+}
+
+extension ViewController: CLLocationManagerDelegate{
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations.last ?? 0)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
 }
