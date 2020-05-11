@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2785F6A90AF86F72851E70E1 /* Pods_Module7_AceWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77B73E643EC4448B36A272D9 /* Pods_Module7_AceWeather.framework */; };
+		481D9F832469853E009817EE /* TemperatureUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481D9F822469853E009817EE /* TemperatureUtility.swift */; };
 		482EE9062465A31C00F729F0 /* WeatherDashBoardItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482EE9052465A31C00F729F0 /* WeatherDashBoardItemType.swift */; };
 		482EE9082465A4A000F729F0 /* DashBoardViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482EE9072465A4A000F729F0 /* DashBoardViewModelItem.swift */; };
 		482EE90A2465A5A000F729F0 /* HeaderViewModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482EE9092465A5A000F729F0 /* HeaderViewModelItem.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		26022246EBC42520B0C2BD02 /* Pods-Module7-AceWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Module7-AceWeather.release.xcconfig"; path = "Target Support Files/Pods-Module7-AceWeather/Pods-Module7-AceWeather.release.xcconfig"; sourceTree = "<group>"; };
+		481D9F822469853E009817EE /* TemperatureUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureUtility.swift; sourceTree = "<group>"; };
 		482EE9052465A31C00F729F0 /* WeatherDashBoardItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDashBoardItemType.swift; sourceTree = "<group>"; };
 		482EE9072465A4A000F729F0 /* DashBoardViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardViewModelItem.swift; sourceTree = "<group>"; };
 		482EE9092465A5A000F729F0 /* HeaderViewModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewModelItem.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				48F361CB246809AF0093687B /* DateUtility.swift */,
+				481D9F822469853E009817EE /* TemperatureUtility.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				482EE9082465A4A000F729F0 /* DashBoardViewModelItem.swift in Sources */,
 				48D228492466C2CB00249F64 /* DetailCollectionViewCell.swift in Sources */,
 				48A6CE372465FA5A00B6BAA7 /* DetailCell.swift in Sources */,
+				481D9F832469853E009817EE /* TemperatureUtility.swift in Sources */,
 				48D2284C2466E41A00249F64 /* DynamicHeightCollectionView.swift in Sources */,
 				48BFAD7824643D5F000ABE19 /* ViewController.swift in Sources */,
 				482EE90A2465A5A000F729F0 /* HeaderViewModelItem.swift in Sources */,

@@ -154,6 +154,11 @@ struct Flags: Decodable {
     }
 }
 
+enum UnitType : String{
+    case Imperial = "us"
+    case Metric = "si"
+}
+
 // MARK: - Hourly
 struct Hourly: Decodable {
     let summary: String

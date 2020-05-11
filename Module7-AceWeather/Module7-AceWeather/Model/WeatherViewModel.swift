@@ -15,6 +15,9 @@ class WeatherViewModel : NSObject {
         super.init()
         guard let data = parseJSON() else{ return  }
         
+        let defaults = UserDefaults.standard
+        defaults.set(data.flags.units, forKey: "units")
+        
         // START HEADER SECTION
         let header = HeaderViewModelItem(summary: data.currently.summary, currrentCityName: data.timezone, currentTemperature: "\(data.currently.apparentTemperature)", daysLowTemperature: "\(data.daily.data[0].apparentTemperatureLow)", daysHighTemperature: "\(data.daily.data[0].apparentTemperatureHigh)")
         

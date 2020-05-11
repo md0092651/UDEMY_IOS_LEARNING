@@ -50,7 +50,8 @@ class HourlyForecastChartViewCell: UITableViewCell {
     func setChartData(_ item : [Currently], type:GraphType)  {
         let values = (0..<item.count).map { (i) -> ChartDataEntry in
             if type == GraphType.TEMPERATURE{
-                return ChartDataEntry(x: Double(i), y: item[i].apparentTemperature)
+                let formattedTemperature = Temperatureutility.formattedTemperature(temperature: item[i].apparentTemperature)
+                return ChartDataEntry(x: Double(i), y: formattedTemperature)
             }else{
                 return ChartDataEntry(x: Double(i), y: item[i].windSpeed)
             }
