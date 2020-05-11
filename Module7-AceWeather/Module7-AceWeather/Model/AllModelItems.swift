@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class HeaderViewModelItem: DashBoardViewModelItem {
     var currentWeatherCondition : String
     var currrentCityName : String
@@ -18,9 +19,6 @@ class HeaderViewModelItem: DashBoardViewModelItem {
     var type: WeatherDashBoardItemType{
         return .header
     }
-    
-    //TODO create methods for formatting the temperature in format 18°C later
-    
     
     init(summary currentWeatherCondition : String, currrentCityName : String ,currentTemperature : String, daysLowTemperature :String, daysHighTemperature:String) {
         self.currentWeatherCondition = currentWeatherCondition
@@ -94,7 +92,7 @@ class WeeklyForecast: DashBoardViewModelItem {
         let values = (1..<details.count).map { (i) -> DailyDatum in
             return details[i]
         }
-    
+
         self.details = values
     }
 }

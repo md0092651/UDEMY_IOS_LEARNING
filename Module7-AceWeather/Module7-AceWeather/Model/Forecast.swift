@@ -8,6 +8,12 @@
 
 import UIKit
 
+struct MoreInfoModel{
+    let title: String
+    let subTitle: String
+    let image: UIImage
+}
+
 
 // MARK: - Forecast
 struct Forecast: Decodable {
