@@ -21,4 +21,5 @@ class DateUtility {
 enum DateFormat: String{
     case MM_DD_YYYY = "MM-dd-yyyy"
     case HH_mm = "HH:mm a"
+    case EEE = "EEE"
 }

@@ -11,7 +11,7 @@ import Foundation
 class Temperatureutility {
     
     static func formattedTemperatureString(temperature: Double) -> String {
-        return "\(formattedTemperature(temperature: temperature))"
+        return String(format: "%.1f", formattedTemperature(temperature: temperature))
     }
     
     static func formattedTemperature(temperature: Double) -> Double {

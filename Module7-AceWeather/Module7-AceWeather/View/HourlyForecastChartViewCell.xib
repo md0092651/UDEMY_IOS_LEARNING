@@ -20,17 +20,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="343" height="300"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Q9d-6c-ofb">
-                                <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VL3-hh-phx">
-                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="40"/>
                                         <state key="normal" title="Temperature"/>
                                         <connections>
                                             <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fel-mE-AFP"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="145-sL-0n7">
-                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="50"/>
+                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="40"/>
                                         <state key="normal" title="Wind"/>
                                         <connections>
                                             <action selector="btnClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LhP-oR-fZp"/>
@@ -39,7 +39,7 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N3K-SS-l0o" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="50" width="343" height="250"/>
+                                <rect key="frame" x="0.0" y="40" width="343" height="250"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="7K9-Fk-sJ8"/>
@@ -47,6 +47,7 @@
                             </view>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="N3K-SS-l0o" secondAttribute="bottom" constant="10" id="H1i-jJ-EYl"/>
                             <constraint firstAttribute="height" constant="300" id="LGD-K2-lhi"/>
                         </constraints>
                     </stackView>

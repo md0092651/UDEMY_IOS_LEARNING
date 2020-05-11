@@ -24,7 +24,7 @@ class WeatherViewModel : NSObject {
         items.append(header)
         // END HEADER SECTION
         
-      
+        
         // START DETAIL SECTION
         var i = [MoreInfoModel]()
         i.append(MoreInfoModel(title: "Cloud", subTitle: "\(data.currently.cloudCover * 100)", image: #imageLiteral(resourceName: "icons8-partly-cloudy-day-100")))
@@ -42,8 +42,12 @@ class WeatherViewModel : NSObject {
         //START HOURLY FORECAST
         let hourly = HourlyForecast(details: data.hourly.data)
         items.append(hourly)
+        //END HOURLY SECTIO
         
-        //END HOURLY SECTION
+        //START WEEKLY FORECAST
+        let weekly = WeeklyForecast(details: data.daily.data)
+        items.append(weekly)
+        //END WEEKLY SECTION
         
     }
     
@@ -96,9 +100,15 @@ extension WeatherViewModel: UITableViewDataSource , UITableViewDelegate{
             }
         case .hourlyForecaset:
             if let cell = tableView.dequeueReusableCell(withIdentifier: HourlyForecastChartViewCell.identifier, for: indexPath) as? HourlyForecastChartViewCell {
-                           cell.item = item
-                           return cell
-                       }
+                cell.item = item
+                return cell
+            }
+        case .forecastWeekly:
+            if let item = item as? WeeklyForecast,  let cell = tableView.dequeueReusableCell(withIdentifier: WeeklyForecastTableViewCell.identifier, for: indexPath) as? WeeklyForecastTableViewCell {
+                cell.item = item.details[indexPath.row]
+                
+                return cell
+            }
         }
         return UITableViewCell()
     }
@@ -106,5 +116,5 @@ extension WeatherViewModel: UITableViewDataSource , UITableViewDelegate{
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return items[section].sectionTitle
     }
-
+    
 }

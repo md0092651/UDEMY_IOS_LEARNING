@@ -6,7 +6,7 @@
 //  Copyright © 2020 com.phomotech. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 
 // MARK: - Forecast
@@ -39,49 +39,49 @@ struct Currently: Decodable {
 
 enum Icon: String, Decodable {
     
-           /// A clear day.
-           case clearDay = "clear-day"
-           
-           /// A clear night.
-           case clearNight = "clear-night"
-           
-           /// A rainy day or night.
-           case rain = "rain"
-           
-           /// A snowy day or night.
-           case snow = "snow"
-           
-           /// A sleety day or night.
-           case sleet = "sleet"
-           
-           /// A windy day or night.
-           case wind = "wind"
-           
-           /// A foggy day or night.
-           case fog = "fog"
-           
-           /// A cloudy day or night.
-           case cloudy = "cloudy"
-           
-           /// A partly cloudy day.
-           case partlyCloudyDay = "partly-cloudy-day"
-           
-           /// A partly cloudy night.
-           case partlyCloudyNight = "partly-cloudy-night"
+    /// A clear day.
+    case clearDay = "clear-day"
+    
+    /// A clear night.
+    case clearNight = "clear-night"
+    
+    /// A rainy day or night.
+    case rain = "rain"
+    
+    /// A snowy day or night.
+    case snow = "snow"
+    
+    /// A sleety day or night.
+    case sleet = "sleet"
+    
+    /// A windy day or night.
+    case wind = "wind"
+    
+    /// A foggy day or night.
+    case fog = "fog"
+    
+    /// A cloudy day or night.
+    case cloudy = "cloudy"
+    
+    /// A partly cloudy day.
+    case partlyCloudyDay = "partly-cloudy-day"
+    
+    /// A partly cloudy night.
+    case partlyCloudyNight = "partly-cloudy-night"
 }
 
 enum PrecipType: String, Decodable {
-     /// Rainy.
-           case rain = "rain"
-           
-           /// Snowy.
-           case snow = "snow"
-           
-           /// Sleet, freezing rain, ice pellets, or wintery mix.
-           case sleet = "sleet"
-           
-           /// Haily.
-           case hail = "hail"
+    /// Rainy.
+    case rain = "rain"
+    
+    /// Snowy.
+    case snow = "snow"
+    
+    /// Sleet, freezing rain, ice pellets, or wintery mix.
+    case sleet = "sleet"
+    
+    /// Haily.
+    case hail = "hail"
 }
 
 enum Summary: String, Decodable {
@@ -100,7 +100,7 @@ struct Daily: Decodable {
 
 // MARK: - DailyDatum
 struct DailyDatum: Decodable {
-    let time: Int
+    let time: Double
     let summary, icon: String
     let sunriseTime, sunsetTime: Double
     let moonPhase, precipIntensity, precipIntensityMax: Double
@@ -139,6 +139,44 @@ extension DailyDatum{
     func getSunsetString() -> String {
         return DateUtility.formatUnixDate(withFormat: DateFormat.HH_mm, unixTimeStamp: sunsetTime)
     }
+    
+    func getHighLowTemperatureString() -> String {
+        return "\(Temperatureutility.formattedTemperatureString(temperature: apparentTemperatureLow)) | \(Temperatureutility.formattedTemperatureString(temperature: apparentTemperatureHigh)) "
+    }
+    
+    func getWetherCondition() -> String
+    {
+        return icon.replacingOccurrences(of: "-", with: " ").capitalizingFirstLetter()
+    }
+    
+    func getWeatherConditionIcon() -> UIImage {
+        let weatherCondition : String
+        switch icon {
+        case Icon.clearDay.rawValue:
+            weatherCondition = "sun.max"
+        case Icon.clearNight.rawValue:
+            weatherCondition = "moon"
+        case Icon.rain.rawValue:
+            weatherCondition = "cloud.rain"
+        case Icon.snow.rawValue:
+            weatherCondition = "snow"
+        case Icon.sleet.rawValue:
+            weatherCondition = "cloud.sleet"
+        case Icon.wind.rawValue:
+            weatherCondition = "wind"
+        case Icon.fog.rawValue:
+            weatherCondition = "cloud.fog"
+        case Icon.cloudy.rawValue:
+            weatherCondition = "cloud"
+        case Icon.partlyCloudyDay .rawValue:
+            weatherCondition = "cloud.sun"
+        case Icon.partlyCloudyNight.rawValue:
+            weatherCondition = "cloud.moon"
+        default :
+            weatherCondition = "sun.max"
+        }
+        return UIImage(systemName: weatherCondition)!
+    }
 }
 
 // MARK: - Flags
@@ -146,7 +184,7 @@ struct Flags: Decodable {
     let sources: [String]
     let nearestStation: Double
     let units: String
-
+    
     enum CodingKeys: String, CodingKey {
         case sources
         case nearestStation = "nearest-station"

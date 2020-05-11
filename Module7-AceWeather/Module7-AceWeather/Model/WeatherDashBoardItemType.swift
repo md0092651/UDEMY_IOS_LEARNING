@@ -12,9 +12,8 @@ enum WeatherDashBoardItemType{
     case header
     case details
     case hourlyForecaset
-//    case hourlyForecaseWind
 //    case sunRise
-//    case forecastWeekly
+    case forecastWeekly
 //    case airQuality
 //    case radarMap
 }

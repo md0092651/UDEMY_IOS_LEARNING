@@ -33,6 +33,8 @@ class ViewController: UIViewController{
         tableView?.register(DetailCell.nib, forCellReuseIdentifier: DetailCell.identifier)
         tableView?.register(DetailsCollectionTableViewCell.nib, forCellReuseIdentifier: DetailsCollectionTableViewCell.identifier)
         tableView?.register(HourlyForecastChartViewCell.nib, forCellReuseIdentifier: HourlyForecastChartViewCell.identifier)
+        tableView?.register(WeeklyForecastTableViewCell.nib, forCellReuseIdentifier: WeeklyForecastTableViewCell.identifier)
+
     }
     
     

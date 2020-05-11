@@ -72,3 +72,29 @@ class HourlyForecast: DashBoardViewModelItem {
         self.details = details
     }
 }
+
+
+class WeeklyForecast: DashBoardViewModelItem {
+    
+    var type: WeatherDashBoardItemType{
+        return .forecastWeekly
+    }
+    
+    var sectionTitle: String{
+        return "7 Days Forecast"
+    }
+    
+    var rowCount: Int {
+        return details.count
+    }
+    
+    var details : [DailyDatum]
+    
+    init(details : [DailyDatum]) {
+        let values = (1..<details.count).map { (i) -> DailyDatum in
+            return details[i]
+        }
+    
+        self.details = values
+    }
+}
